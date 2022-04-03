@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PostModel } from '../models/post.model';
+import { PostModel } from '@shared/models/post.model';
 
 @Injectable()
 export class FeedService {
@@ -69,17 +69,14 @@ export class FeedService {
     }
   ];
 
-  constructor() { }
-
   public likePost(targetPost: PostModel) {
-    const postIdx = this.posts.findIndex((post) => post.id = targetPost.id);
-    this.posts[postIdx].isLiked = true;
-    this.posts[postIdx].likes = this.posts[postIdx].likes + 1;
+    targetPost.isLiked = true;
+    targetPost.likes += 1;
+
   }
 
   public unlikePost(targetPost: PostModel) {
-    const postIdx = this.posts.findIndex((post) => post.id = targetPost.id);
-    this.posts[postIdx].isLiked = false;
-    this.posts[postIdx].likes = this.posts[postIdx].likes - 1;
+    targetPost.isLiked = false;
+    targetPost.likes -= 1;
   }
 }

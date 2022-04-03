@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostModel } from '../../models/post.model';
-import { FeedService } from '../../services/feed.service';
+import { PostModel } from '@shared/models';
+import { FeedService } from '@core/services';
 
 
 @Component({
@@ -16,14 +16,6 @@ export class PostListComponent implements OnInit {
 
   ngOnInit(): void {
     this.posts = this.feedService.posts;
-  }
-
-  public likePost(targetPost: PostModel) {
-    this.feedService.likePost(targetPost);
-  }
-
-  unlikePost(targetPost: PostModel) {
-    this.feedService.unlikePost(targetPost);
   }
 
 }

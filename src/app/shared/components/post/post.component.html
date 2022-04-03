@@ -5,7 +5,11 @@
       <p class="card-text">{{ post.text }}</p>
       <div class="d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center text-muted">
-          <span (click)="likePost(post)" class="me-2" role="button"><i class="fs-5 lh-sm bi bi-heart"></i></span>
+          <span
+            (click)="post.isLiked ? unlike(post) : like(post)"
+            role="button">
+            <i class="me-2 fs-5 lh-sm bi bi-{{ post.isLiked ? 'heart-fill' : 'heart' }}"></i>
+          </span>
           <small>{{ post.likes }}</small>
         </div>
         <small class="text-muted">9 min</small>

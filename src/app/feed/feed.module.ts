@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PostComponent } from './components/post/post.component';
-import { PostListComponent } from './components/post-list/post-list.component';
-import { FeedService } from './services/feed.service';
 
-
+import { PostListComponent } from '@feed/components/post-list/post-list.component';
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
   declarations: [
-    PostComponent,
     PostListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
-  providers: [FeedService],
   exports: [
     PostListComponent
   ]
